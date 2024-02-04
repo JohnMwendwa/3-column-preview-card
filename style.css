@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Primary */
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+
+  /* Neutral */
+  /* (paragraphs) */
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  /* (background, headings, buttons) */
+  --very-light-gray: hsl(0, 0%, 95%);
+}
+
+body {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  width: 4rem;
+}
+
+h2 {
+  font-family: "Big Shoulders Display", sans-serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: var(--very-light-gray);
+  font-weight: 700;
+}
+
+button {
+  border-radius: 100vh;
+  padding: 1rem 2rem;
+  border: transparent;
+  display: inline-block;
+  color: var(--item-clr);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color: var(--very-light-gray);
+}
+
+button:hover {
+  background-color: transparent;
+  color: var(--transparent-white);
+  outline: 1px solid var(--very-light-gray);
+}
+
+main {
+  display: grid;
+  place-content: center;
+  background-color: var(--very-light-gray);
+  min-height: 100vh;
+  padding: 3rem 1rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 968px) {
+  .container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  main {
+    padding: 5rem 1rem;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  max-width: 19.2rem;
+  gap: 2rem;
+  background-color: var(--item-clr);
+}
+
+.card p {
+  margin-bottom: 0rem;
+  line-height: 1.75;
+  color: var(--transparent-white);
+}
+
+@media screen and (min-width: 968px) {
+  .card p {
+    margin-bottom: 3rem;
+  }
+}
+
+.card:nth-of-type(1) {
+  --item-clr: var(--bright-orange);
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+.card:nth-of-type(2) {
+  --item-clr: var(--dark-cyan);
+}
+.card:nth-of-type(3) {
+  --item-clr: var(--very-dark-cyan);
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+@media screen and (min-width: 968px) {
+  .card:nth-of-type(1) {
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+
+  .card:nth-of-type(3) {
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+}
+
+.card__footer {
+  margin-top: auto;
+}
